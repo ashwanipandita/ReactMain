@@ -1,0 +1,25 @@
+.mainbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  
+}
+
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 400px; /* Make the container take up the full height of the viewport */
+  width: 30%;
+  border: 2px solid grey;
+ padding-top: 40px;
+ background-color: antiquewhite;
+}
+
+.delete-button {
+  margin-left: 10px;
+}
