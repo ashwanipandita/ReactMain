@@ -22,6 +22,9 @@ import CurrencyConverter from "./components/CurrencyConverter";
 import CounterRedux from "./components/CounterRedux";
 import UseMemo from "./components/UseMemo";
 import UseCallback from "./components/UseCallback";
+import ThemeRedux from "./components/ThemeRedux";
+
+
 
 
 
@@ -56,9 +59,8 @@ const App =() =>{
           <Route path='/CounterRedux' element={<CounterRedux />} />
           <Route path='/UseMemo' element={<UseMemo/>} />
           <Route path='/UseCallback' element={<UseCallback/>} />
-  <Route path="/" element={<Home />} /> {/* Default route */}
-        
-
+          <Route path="/" element={<Home />} /> {/* Default route */}
+          <Route path='/ThemeRedux' element={<ThemeRedux/>} />
          
           
          
