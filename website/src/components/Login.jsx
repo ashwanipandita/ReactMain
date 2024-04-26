@@ -1,61 +1,78 @@
-import {useContext, useState } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
-
-
+import axios from "axios";
 
 function Login() {
-    const { LOGIN } = useContext(AuthContext)
+  const { LOGIN } = useContext(AuthContext);
 
-    const router = useNavigate()
+  const router = useNavigate();
 
-    const [userData, setUserData] = useState({ email: "", password: "" })
-    // userData.name
-    // userData[name]
-    // console.log(userData, "userData")
+  const [userData, setUserData] = useState({ email: "", password: "" });
+  // userData.name
+  // userData[name]
+  // console.log(userData, "userData")
 
-    function handleChange(event) {
-        // console.log(event.target.value, event.target.name)
-        setUserData({ ...userData, [event.target.name]: event.target.value })
-    }
+  function handleChange(event) {
+    // console.log(event.target.value, event.target.name)
+    setUserData({ ...userData, [event.target.name]: event.target.value });
+  }
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-        if (userData.email && userData.password) {
-            // await calling backend one server to another server request, backend validation, data to store mongodb
-            try {
-                // const response = await axios.post('http://localhost:8080/login', { userData })
-                const response = { data: { success: true, message: "Login Sucessfull.",userData: { name: "Ashwani Pandita" } } }
-                // return res.status(201).json({ success: true, message: "Registeration Completed." })
-                if (response.data.success) {
-                    LOGIN(response.data.userData)
-                    setUserData({ email: "", password: "" })
-                    toast.success(response.data.message)
-                    router('/Home');
-                    
-                }
-            } catch (error) {
-                toast.error(error.response.data.message)
-            }
-        } else {
-            alert("All fields are required.")
+  async function handleSubmit(event) {
+    event.preventDefault();
+    if (userData.email && userData.password) {
+      // await calling backend one server to another server request, backend validation, data to store mongodb
+      try {
+        const response = await axios.post(
+          "http://localhost:3000/api/v1/auth/login",
+          { userData }
+        );
+        // const response = { data: { success: true, message: "Login Sucessfull.",userData: { name: "Ashwani Pandita" } } }
+        // return res.status(201).json({ success: true, message: "Registeration Completed." })
+        if (response.data.success) {
+          //   localStorage.setItem("token", JSON.stringify(response.data.token));
+          LOGIN(response.data.userData);
+          setUserData({ email: "", password: "" });
+          toast.success(response.data.message);
+          router("/Home");
         }
+      } catch (error) {
+        toast.error(error.response.data.message);
+      }
+    } else {
+      alert("All fields are required.");
     }
+  }
 
-    return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Email : </label><br />
-                <input type="email" name="email" value={userData.email} onChange={handleChange} required /><br />
-                <label>Password : </label><br />
-                <input type="password" name="password" value={userData.password} onChange={handleChange} required /><br />
-                <input type="submit" value="Login" />
-            </form>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <label>Email : </label>
+        <br />
+        <input
+          type="email"
+          name="email"
+          value={userData.email}
+          onChange={handleChange}
+          required
+        />
+        <br />
+        <label>Password : </label>
+        <br />
+        <input
+          type="password"
+          name="password"
+          value={userData.password}
+          onChange={handleChange}
+          required
+        />
+        <br />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+  );
 }
-
 
 export default Login;
