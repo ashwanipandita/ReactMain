@@ -12,7 +12,6 @@ function Login() {
   const [userData, setUserData] = useState({ email: "", password: "" });
   // userData.name
   // userData[name]
-  // console.log(userData, "userData")
 
   function handleChange(event) {
     // console.log(event.target.value, event.target.name)
@@ -25,17 +24,18 @@ function Login() {
       // await calling backend one server to another server request, backend validation, data to store mongodb
       try {
         const response = await axios.post(
-          "http://localhost:3000/api/v1/auth/login",
-          { userData }
+          "http://localhost:3001/api/v1/auth/login",
+          { userData },
+          { withCredentials: true }
         );
-        // const response = { data: { success: true, message: "Login Sucessfull.",userData: { name: "Ashwani Pandita" } } }
+        // const response = { data: { success: true, message: "Login Sucessfull.", token: "abcdefghi", userData: { name: 'Awdiz', email: "awdiz@gmail.com" } } }
         // return res.status(201).json({ success: true, message: "Registeration Completed." })
         if (response.data.success) {
-          //   localStorage.setItem("token", JSON.stringify(response.data.token));
+          // localStorage.setItem("token", JSON.stringify(response.data.token))
           LOGIN(response.data.userData);
           setUserData({ email: "", password: "" });
           toast.success(response.data.message);
-          router("/Home");
+          router("/");
         }
       } catch (error) {
         toast.error(error.response.data.message);
@@ -52,6 +52,7 @@ function Login() {
         <label>Email : </label>
         <br />
         <input
+          style={{ border: "1px solid red" }}
           type="email"
           name="email"
           value={userData.email}

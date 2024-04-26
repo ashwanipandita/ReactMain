@@ -52,7 +52,7 @@ const App =() =>{
           <Route path='/propsdrilling' element={<PropsDrilling counter={counter} students={students} />} />
           <Route path="/CounterContext" element={<ProviderCounterContext/>}></Route>
           <Route path="/Home" element={<Home/>}></Route>
-          <Route path="/Login" element={<Login/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
           <Route path="/AuthContext" element={<AuthContext/>}></Route>
           <Route path="/Todo" element={<Todo/>}></Route>
           <Route path='/CurrencyConverter' element={<CurrencyConverter />} />
