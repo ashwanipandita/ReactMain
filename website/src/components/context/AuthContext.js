@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import { createContext, useEffect, useReducer } from "react";
 
@@ -29,7 +30,7 @@ const AuthContextComponent = ({ children }) => {
 
   async function getUserData() {
     try {
-      const response = await axios.get("/validate-token", {
+      const response = await axios.get("/validate-token",  {
         withCredentials: true,
       });
       // const response = { data: { success: true, userData: { name: 'Awdiz', email: "awdiz@gmail.com" } } }
