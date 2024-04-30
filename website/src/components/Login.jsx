@@ -10,6 +10,7 @@ function Login() {
   const router = useNavigate();
 
   const [userData, setUserData] = useState({ email: "", password: "" });
+  console.log(userData, "userData");
   // userData.name
   // userData[name]
 
