@@ -24,6 +24,9 @@ import UseMemo from "./components/UseMemo";
 import UseCallback from "./components/UseCallback";
 import ThemeRedux from "./components/ThemeRedux";
 import AddProduct from "./components/09-05/AddProduct";
+import AllProducts from "./components/AllProducts"
+
+
 
 
 
@@ -32,7 +35,45 @@ import AddProduct from "./components/09-05/AddProduct";
 
 const App =() =>{
   const [students ] = useState(["a", 'b', 'c', 'd'])
-  const [counter] = useState(1234)
+  const [counter] = useState(1234);
+  const [products, setProducts] = useState([
+    {
+      name: "Tshirt",
+      image: "https://m.media-amazon.com/images/I/51uGECebmZL._AC_UY1100_.jpg",
+    },
+    {
+      name: "Jeans",
+      image: "https://m.media-amazon.com/images/I/51uGECebmZL._AC_UY1100_.jpg",
+    },
+    {
+      name: " cap",
+      image: "https://m.media-amazon.com/images/I/51uGECebmZL._AC_UY1100_.jpg",
+    },
+    {
+      name: "Tshirt",
+      image: "https://m.media-amazon.com/images/I/51uGECebmZL._AC_UY1100_.jpg",
+    },
+    {
+      name: "Jeans",
+      image: "https://m.media-amazon.com/images/I/51uGECebmZL._AC_UY1100_.jpg",
+    },
+    {
+      name: " cap",
+      image: "https://m.media-amazon.com/images/I/51uGECebmZL._AC_UY1100_.jpg",
+    },
+    {
+      name: "Tshirt",
+      image: "https://m.media-amazon.com/images/I/51uGECebmZL._AC_UY1100_.jpg",
+    },
+    {
+      name: "Jeans",
+      image: "https://m.media-amazon.com/images/I/51uGECebmZL._AC_UY1100_.jpg",
+    },
+    {
+      name: " cap",
+      image: "https://m.media-amazon.com/images/I/51uGECebmZL._AC_UY1100_.jpg",
+    },
+  ]);
   return(
 
     <div>
@@ -63,6 +104,11 @@ const App =() =>{
          <Route path="/" element={<Home />} /> {/* Default route */}
           <Route path='/ThemeRedux' element={<ThemeRedux/>} />
          <Route path='/add-product' element = {<AddProduct/>}/>
+         <Route path='/AllProducts' element = {<AllProducts  awdiz={products}/>}/>
+        
+        
+
+
         </Routes>
      </ThemeProvider>
     </div>
