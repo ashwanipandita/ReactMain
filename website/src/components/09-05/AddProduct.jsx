@@ -3,6 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import AuthDirection from "../redirections/AuthDirection";
 import axios from "axios";
 import toast from "react-hot-toast";
+import api from "../../AxiosConfig";
 
 const AddProduct = () => {
   const [productData, setProductData] = useState({
@@ -22,7 +23,7 @@ const AddProduct = () => {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const response = await axios.post("http://localhost:3001/add-product", {
+      const response = await api.post("/add-product", {
         productData,
         userId: "663b7b83f846063c228fe63f",
       });

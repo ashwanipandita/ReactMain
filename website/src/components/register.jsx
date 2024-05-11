@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import api from "../AxiosConfig";
 
 function Register() {
   const router = useNavigate();
@@ -31,8 +32,8 @@ function Register() {
     ) {
       // await calling backend one server to another server request, backend validation, data to store mongodb
       try {
-        const response = await axios.post(
-          "http://localhost:3001/api/v1/auth/register",
+        const response = await api.post(
+          "/register",
           { userData }
         );
         // const response = { data: { success: true, message: "Registeration Completed." } }

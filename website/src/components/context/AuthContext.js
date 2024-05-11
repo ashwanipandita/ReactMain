@@ -1,6 +1,7 @@
 
 import axios from "axios";
 import { createContext, useEffect, useReducer } from "react";
+import api from "../../AxiosConfig";
 
 export const AuthContext = createContext();
 
@@ -30,9 +31,7 @@ const AuthContextComponent = ({ children }) => {
 
   async function getUserData() {
     try {
-      const response = await axios.get("http://localhost:3001/api/v1/auth/validate-token",{
-          withCredentials: true,
-        });
+      const response = await api.get("/validate-token")
       // const response = { data: { success: true, userData: { name: 'Awdiz', email: "awdiz@gmail.com" } } }
       if (response.data.success) {
         LOGIN(response.data.user);
@@ -42,9 +41,9 @@ const AuthContextComponent = ({ children }) => {
     }
   }
 
-  // useEffect(() => {
-  //   getUserData();
-  // }, []);
+  useEffect(() => {
+    getUserData();
+  }, []);
 
   return (
     <AuthContext.Provider value={{ state, LOGIN, LOGOUT }}>
