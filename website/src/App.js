@@ -10,7 +10,7 @@ import EffectFour from "./components/effect4";
 import Application from "./components/application";
 import UseReducer from './components/UseReducer';
 import PropsDrilling from "./components/propsDrilling";
-
+import Navbar2 from "./components/Navbar2";
 import { useState } from 'react';
 import ProviderCounterContext from "./components/context/CounterContext";
 import Home from "./components/Home";
@@ -25,6 +25,8 @@ import UseCallback from "./components/UseCallback";
 import ThemeRedux from "./components/ThemeRedux";
 import AddProduct from "./components/09-05/AddProduct";
 import AllProducts from "./components/AllProducts"
+import Buyer from "./components/Project/Buyer";
+import Seller from "./components/Project/Seller";
 
 
 
@@ -33,9 +35,27 @@ import AllProducts from "./components/AllProducts"
 
 
 
-const App =() =>{
-  const [students ] = useState(["a", 'b', 'c', 'd'])
-  const [counter] = useState(1234);
+function App() {
+ 
+  //   console.log(allProducts, "allProducts");
+
+  const [search, setSearch] = useState(""); // shose
+  
+
+  function handleChange(event) {
+    console.log(event.target.value);
+    setSearch(event.target.value);
+
+    let userword = event.target.value.toLowerCase();
+
+    
+
+   
+
+  }
+
+  const [students, setStudents] = useState(["a", "b", "c", "d"]);
+  const [counter, setCounter] = useState(1234);
   const [products, setProducts] = useState([
     {
       name: "Tshirt",
@@ -79,9 +99,9 @@ const App =() =>{
     <div>
 
 <ThemeProvider>
-
+<Navbar2 search={search} handleChange={handleChange} />
         <Routes>
-          <Route path="/register" element={<Register/>}></Route>
+         
          
           <Route path="/counter" element={<Counter/>}></Route>
           <Route path="/welcome" element={<Welcome/>}></Route>
@@ -93,8 +113,8 @@ const App =() =>{
           <Route path="/useReducer" element={<UseReducer/>}></Route>
           <Route path='/propsdrilling' element={<PropsDrilling counter={counter} students={students} />} />
           <Route path="/CounterContext" element={<ProviderCounterContext/>}></Route>
-          <Route path="/Home" element={<Home/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
+         
+     
           <Route path="/AuthContext" element={<AuthContext/>}></Route>
           <Route path="/Todo" element={<Todo/>}></Route>
           <Route path='/CurrencyConverter' element={<CurrencyConverter />} />
@@ -103,11 +123,20 @@ const App =() =>{
           <Route path='/UseCallback' element={<UseCallback/>} />
          <Route path="/" element={<Home />} /> {/* Default route */}
           <Route path='/ThemeRedux' element={<ThemeRedux/>} />
-         <Route path='/add-product' element = {<AddProduct/>}/>
-         <Route path='/AllProducts' element = {<AllProducts  awdiz={products}/>}/>
+         
+        
         
         
 
+
+
+         <Route path="/Home" element={<Home/>}></Route>
+         {/* <Route path="/buyer" element={<Buyer/>}></Route> */}
+         <Route path="/seller" element={<Seller/>}></Route>
+         <Route path="/register" element={<Register/>}></Route>
+         <Route path="/login" element={<Login/>}></Route>
+         <Route path='/AllProducts' element = {<AllProducts  awdiz={products}/>}/>
+         <Route path='/add-product' element = {<AddProduct/>}/>
 
         </Routes>
      </ThemeProvider>

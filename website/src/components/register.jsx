@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import api from "../AxiosConfig";
+import { AuthContext } from "./context/AuthContext";
 
 function Register() {
   const router = useNavigate();
+  const {state} = useContext(AuthContext);
 
   const [userData, setUserData] = useState({
     name: "",
@@ -62,6 +64,18 @@ function Register() {
       alert("All fields are required.");
     }
   }
+
+  useEffect (()=>{
+    console.log(state);
+    if(state && state?.user?.role !== undefined){
+      if(state?.user?.role === 'buyer'){
+        router("/");
+      }else {
+        router("/seller");
+      }
+    }
+  },[state])
+
 
   return (
     <div>

@@ -32,7 +32,7 @@ if (response?.data?.success){
         <div>
           <h1>All Products</h1>
           {allProducts.length ? (
-            <div
+           <div
               style={{
                 display: "flex",
                 flexWrap: "wrap",
@@ -59,7 +59,7 @@ if (response?.data?.success){
             <div>
               <h1>Loading..</h1>
             </div>
-          )}
+          )} 
         </div>
       );
     };

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
@@ -6,7 +6,7 @@ import axios from "axios";
 import api from "../AxiosConfig";
 
 function Login() {
-  const { LOGIN } = useContext(AuthContext);
+  const { LOGIN, state } = useContext(AuthContext);
 
   const router = useNavigate();
 
@@ -43,6 +43,17 @@ function Login() {
       alert("All fields are required.");
     }
   }
+
+  useEffect (()=>{
+    console.log(state);
+    if(state && state?.user?.role !== undefined){
+      if(state?.user?.role === 'buyer'){
+        router("/");
+      }else {
+        router("/seller");
+      }
+    }
+  },[state])
 
   return (
     <div>

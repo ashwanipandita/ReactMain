@@ -4,6 +4,7 @@ import AuthDirection from "../redirections/AuthDirection";
 import axios from "axios";
 import toast from "react-hot-toast";
 import api from "../../AxiosConfig";
+import SellerProtected from "../redirections/SellerProtected";
 
 const AddProduct = () => {
   const [productData, setProductData] = useState({
@@ -44,7 +45,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div>
+    <SellerProtected>
       <h1>AddProduct</h1>
       <form onSubmit={handleSubmit}>
         <label>Product Name</label>
@@ -70,7 +71,7 @@ const AddProduct = () => {
         <input type="submit" />
         <br />
       </form>
-    </div>
+    </SellerProtected>
   );
 };
 
