@@ -130,6 +130,7 @@ function Register() {
 
         <input type="submit" value="Register" />
       </form>
+      <button onClick={()=> router("/login")}>Login?</button>
     </div>
   );
 }

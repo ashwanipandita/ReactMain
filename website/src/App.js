@@ -27,6 +27,7 @@ import AddProduct from "./components/09-05/AddProduct";
 import AllProducts from "./components/AllProducts"
 import Buyer from "./components/Project/Buyer";
 import Seller from "./components/Project/Seller";
+import YourProduct from "./components/Project/YourProduct";
 
 
 
@@ -137,6 +138,7 @@ function App() {
          <Route path="/login" element={<Login/>}></Route>
          <Route path='/AllProducts' element = {<AllProducts  awdiz={products}/>}/>
          <Route path='/add-product' element = {<AddProduct/>}/>
+         <Route path='/your-product' element = {<YourProduct/>}/>
 
         </Routes>
      </ThemeProvider>

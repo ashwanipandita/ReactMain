@@ -82,6 +82,9 @@ function Login() {
         <br />
         <input type="submit" value="Login" />
       </form>
+
+<button onClick={()=> router("/register")}>Register?</button>
+
     </div>
   );
 }

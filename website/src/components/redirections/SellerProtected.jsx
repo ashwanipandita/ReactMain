@@ -11,8 +11,9 @@ const SellerProtected = ({ children }) => {
   
     if (state?.user && state?.user?.role !== "seller") {
       toast.error("You are not allow to access this page.");
-     return router("/login");
+      router("/login");
     }
   }, [state]);
+  return children;
 };
 export default SellerProtected;
