@@ -38,9 +38,13 @@ import { MyCounterContext } from "./context/CounterContext";
 import api from "../AxiosConfig";
 import { AuthContext } from "./context/AuthContext";
 import "./styles/Home.css";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const router = useNavigate();
   const [allProducts, setAllProducts] = useState([]);
+  console.log(allProducts,"allProducts");
 
   useEffect(() => {
     async function getProducts() {
@@ -55,6 +59,42 @@ function Home() {
     }
     getProducts();
   }, []);
+  const { counter, Increment } = useContext(MyCounterContext);
+  const { state } = useContext(AuthContext);
+  // const { theme } = useContext(ThemeContext)
+  console.log(state, "state");
+
+async function AddToCart(productId){
+  if (state?.user?._id === undefined) {
+    toast.error("Please login to add products into cart.");
+    router("/login");
+  }
+try{
+const response = await api.post("/api/v1/user/add-to-cart",{userId : state?.user?._id, productId: productId,});
+if (response.data.success){
+  toast.success(response.data.message);
+}
+}catch (error) {
+        console.log(error);
+      }
+}
+
+
+async function AddToWishlist(productId){
+  if (state?.user?._id === undefined) {
+    toast.error("Please login to add products into Wishlist.");
+    router("/login");
+  }
+try{
+const response = await api.post("/api/v1/user/add-to-Wishlist",{userId : state?.user?._id, productId: productId,});
+if (response.data.success){
+  toast.success(response.data.message);
+}
+}catch (error) {
+        console.log(error);
+      }
+}
+
 
   return (
     <div id="body">
@@ -176,12 +216,16 @@ function Home() {
           {allProducts.length ? (
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
               {allProducts.map((productObj) => (
-                <div style={{ width: "18%", border: "2px solid black", height: "250px" }}>
+                <div style={{ width: "20%", border: "2px solid black", height: "300px" }}>
                   <h1>Name : {productObj.name}</h1>
                   <p>Category : {productObj.category}</p>
                   <p>Price : {productObj.price}/-</p>
                   <p>Total Quantities : {productObj.quantity}</p>
                   <p>{productObj.tags}</p>
+                  <button onClick={() => AddToCart (productObj?._id)}>Add To Cart</button>
+                  
+                  
+                  <button onClick={() => AddToWishlist (productObj?._id)}>Add To Wishlist</button>
                 </div>
               ))}
             </div>
