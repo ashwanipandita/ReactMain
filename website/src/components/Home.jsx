@@ -39,7 +39,7 @@ import api from "../AxiosConfig";
 import { AuthContext } from "./context/AuthContext";
 import "./styles/Home.css";
 import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
   const router = useNavigate();
@@ -99,6 +99,8 @@ if (response.data.success){
   return (
     <div id="body">
       <div id="body-nav">
+
+      <Link to="/cart">Go to Cart</Link>
         <div>
           <p>
             Home / Clothing / <b>Men T-Shirts</b>

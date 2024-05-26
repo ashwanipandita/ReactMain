@@ -28,6 +28,7 @@ import AllProducts from "./components/AllProducts"
 import Buyer from "./components/Project/Buyer";
 import Seller from "./components/Project/Seller";
 import YourProduct from "./components/Project/YourProduct";
+import Cart from "./components/Cart";
 
 
 
@@ -139,6 +140,7 @@ function App() {
          <Route path='/AllProducts' element = {<AllProducts  awdiz={products}/>}/>
          <Route path='/add-product' element = {<AddProduct/>}/>
          <Route path='/your-product' element = {<YourProduct/>}/>
+         <Route path='/Cart' element = {<Cart/>}/>
 
         </Routes>
      </ThemeProvider>
