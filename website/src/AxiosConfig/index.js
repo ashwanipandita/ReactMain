@@ -1,7 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://backend-o4io.onrender.com",
+  baseURL: "https://backend-5w9z.onrender.com/",
+
+
+
   // process.env.ENV === "DEVELOPMENT"
   //   ? "http://localhost:3001"
   //   : "https://awdiz-6.com",
