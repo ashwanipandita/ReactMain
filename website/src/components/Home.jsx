@@ -40,6 +40,7 @@ import { AuthContext } from "./context/AuthContext";
 import "./styles/Home.css";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import logoImage from './Adidas-Pictures/men-image/1.png';
 
 function Home() {
   const router = useNavigate();
@@ -103,7 +104,7 @@ if (response.data.success){
     <Link to="/cart"><button>Go to Cart</button></Link>
      <Link to="/add-product"><button>Add Product</button></Link>
       
-        <div>
+        {/* <div>
           <p>
             Home / Clothing / <b>Men T-Shirts</b>
           </p>
@@ -148,7 +149,96 @@ if (response.data.success){
               <i class="fa-solid fa-angle-down"></i>
             </div>
           </div>
-        </div>
+        </div> */}
+
+
+
+<div class="header">
+                <div class="hd1">
+                    <div>
+                        <p> FREE DELIVERY, RETURN & EXCHANGE</p>
+                    </div>
+                    <div class="icon-down">
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </div>
+                <div class="hd2">
+                    <p>help</p>
+                    <p>orders and returns</p>
+                    <p>sign up</p>
+                    <a href="login.html">
+                        <p>log in</p>
+                    </a>
+                </div>
+                <div class="hd3">
+                    <div class="logo">
+                    <a href="Adidas.html">
+                    <img src={logoImage} alt="Adidas Logo" />
+                      </a>
+
+                    </div>
+                    <div class="categories ">
+                        <div class="cts">
+                          
+                                <p> <b>MEN </b></p>
+                            
+                        </div>
+                        <div class="cts">
+                           
+                                <p> <b>WOMEN </b></p>
+                           
+                        </div>
+                        <div class="cts">
+                            
+                                <p> <b>KIDS </b></p>
+                           
+                        </div>
+                        <div class="cts">
+                            <p>SPORTS</p>
+                        </div>
+                        <div class="cts">
+                            <p>BR/ANDS</p>
+                        </div>
+                        <div class="cts">
+                            <p>LIFESTYLE</p>
+                        </div>
+                        <div class="cts red-clr">
+                            <p>OUTLETS</p>
+                        </div>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" class="search-bar" placeholder="Search " />
+                        <button class="btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="options-3">
+                        <div class="profile">
+                            <a href="profile.html"> <i class="fa-regular fa-user"></i> </a>
+                        </div>
+                        <div class="heart">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div class="cart">
+                            <a href="Cart.html"> <i class="fa-solid fa-bag-shopping"></i> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hd4">
+                    <div class="hd4-text">
+                        <p>ADIDAS: THE BR/AND WITH THE 3-STRIPES</p>
+                    </div>
+                    <div class="hd4-icon">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
       </div>
 
 <div className="homeimg1">
@@ -328,7 +418,7 @@ if (response.data.success){
     <p>Flat 50% Off!</p>
   </div>
 
-  <div class="products">
+<div class="products">
                         <p> <b>SPORTS</b></p> <br />
                         <p>Cricket</p>
                         <p>Running</p>
