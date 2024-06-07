@@ -100,8 +100,8 @@ if (response.data.success){
     <div id="body">
       <div id="body-nav">
 
-      <Link to="/cart">Go to Cart</Link>
-     
+    <Link to="/cart"><button>Go to Cart</button></Link>
+     <Link to="/add-product"><button>Add Product</button></Link>
       
         <div>
           <p>
