@@ -319,7 +319,7 @@ if (response.data.success){
 
           
           {allProducts.length ? (
-            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around", gap : "10px", paddingBottom:"20px" }}>
               {allProducts.map((productObj) => (
                 <div style={{ width: "20%", border: "2px solid black", height: "300px" }}>
                   <h1>Name : {productObj.name}</h1>
