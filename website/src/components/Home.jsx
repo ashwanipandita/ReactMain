@@ -225,6 +225,9 @@ if (response.data.success){
         </div> */}
         <div id="body-body-products" class="pl-20">
           <h1>All Products</h1>
+
+
+          
           {allProducts.length ? (
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
               {allProducts.map((productObj) => (
@@ -246,10 +249,145 @@ if (response.data.success){
               <h1>Loading..</h1>
             </div>
           )}
+
+
+
+
+          
         </div>
+
+
+
+        
+      </div>
+
+      <div>
+      <div className="section-9">
+  <div className="sec9-left">
+    <p>
+      <b>STORIES, STYLES AND SPORTSWEAR AT <br />
+      ADIDAS, SINCE 1949 </b> <br /> <br />
+      Sport keeps us fit. Keeps you mindful. Brings us together. Through sport we have <br />
+      the power to change lives. Whether it is through stories of inspiring athletes. <br />
+      Helping you to get up and get moving. Sportswear featuring the latest <br />
+      technologies, to up your performance. Beat your PB. adidas offers home to the <br />
+      runner, the basketball player, the soccer kid, the fitness enthusiast. The weekend <br />
+      hiker that loves to escape the city. The yoga teacher that spreads the moves. <br />
+      The 3-Stripes are seen in the music scene. On stage, at festivals. Our sports clothing <br />
+      keeps you focused before that whistle blows. During the race. And at the finish <br />
+      lines. We’re here to support creators. Improve their game. Their lives. And change <br />
+      the world. <br /><br />
+
+      adidas is about more than sportswear and workout clothes. We partner with the <br />
+      best in the industry to co-create. This way we offer our fans the sports apparel <br />
+      and style that match their athletic needs, while keeping sustainability in mind. <br />
+      We’re here to support creators. Improve their game. Create change. And we think <br />
+      about the impact we have on our world.
+    </p>
+  </div>
+  <div className="sec9-right">
+    <p>
+      <b> WORKOUT CLOTHES, FOR ANY SPORT </b> <br /> <br />
+      adidas designs for and with athletes of all kinds. Creators, who love to change the <br />
+      game. Challenge conventions. Break the rules and define new ones. Then break <br />
+      them again. We supply teams and individuals with athletic clothing pre-match. To <br />
+      stay focused. We design sports apparel that get you to the finish line. To win the <br />
+      match. We support women, with bras and tights made for purpose. From low to <br />
+      high support. Maximum comfort. We design, innovate and iterate. Testing new <br />
+      technologies in action. On the pitch, the tracks, the court, the pool. Retro workout <br />
+      clothes inspire new streetwear essentials. Like NMD, Ozweego and our Firebird <br />
+      tracksuits. Classic sports models are brought back to life. Like Stan Smith. And <br />
+      Superstar. Now seen on the streets and the stages. <br /><br />
+
+      Through our collections we blur the borders between high fashion and high <br />
+      performance. Like our adidas by Stella McCartney athletic clothing collection – <br />
+      designed to look the part inside and outside of the gym. Or some of our adidas <br />
+      Originals lifestyle pieces, that can be worn as sportswear too. Our lives are <br />
+      constantly changing. Becoming more and more versatile. And adidas designs with that in mind.
+    </p>
+  </div>
+</div>
+<div className="section-10">
+  <div className="sec10-left">
+    <p> JOIN ADIDAS AND GET 15% OFF </p>
+  </div>
+  <div className="sec10-right">
+    <button className="sec10-btn">
+      SIGN UP FOR FREE <i className="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+</div>
+<div className="section-11">
+  <div className="products">
+    <p> <b>PRODUCTS </b></p> <br />
+    <p>Footwear</p>
+    <p>Accessories</p>
+    <p>Outlet – Sale</p>
+    <p>New Arrivals</p>
+    <p>Special Offer</p>
+    <p>Flat 50% Off!</p>
+  </div>
+
+  <div class="products">
+                        <p> <b>SPORTS</b></p> <br />
+                        <p>Cricket</p>
+                        <p>Running</p>
+                        <p>Football</p>
+                        <p>Gym/Training</p>
+                        <p>Tennis</p>
+                        <p>Outdoor</p>
+                        <p>Basketball</p>
+                        <p>Swimming</p>
+                        <p>Skateboarding</p>
+                    </div>
+                    <div class="products">
+                        <p> <b>COLLECTIONS </b></p> <br />
+                        <p>Ultraboost</p>
+                        <p>Superstar</p>
+                        <p>NMD</p>
+                        <p>Stan Smith</p>
+                        <p>Sustainability</p>
+                        <p>Predator</p>
+                        <p>Parley</p>
+                        <p>adicolor</p>
+                    </div>
+                    <div class="products">
+                        <p><b>SUPPORT</b></p> <br />
+                        <p>Help</p>
+                        <p>Customer Services</p>
+                        <p>Returns & Exchanges</p>
+                        <p>Shipping</p>
+                        <p>Order Tracker</p>
+                        <p>Store Locator</p>
+                        <p>Br/a Fit Guide</p>
+                        <p>Terms and conditions</p>
+                    </div>
+                    <div class="products">
+                        <p> <b>COMPANY INFO </b></p> <br />
+                        <p>About Us</p>
+                        <p>adidas stories</p>
+                        <p>adidas Apps</p>
+                        <p>Entity Details</p>
+                        <p>Press</p>
+                        <p>Careers</p>
+                    </div>
+
+  {/* Add other product-related content here */}
+</div>
+<div className="footer">
+  <div className="footer-1">
+    <p>Privacy Policy | Terms and Conditions | Cookies</p>
+  </div>
+  <div className="footer-2">
+    <p>©2021 adidas India Marketing Pvt. Ltd</p>
+  </div>
+</div>
+
       </div>
     </div>
   );
 }
+
+
 
 export default Home;
