@@ -30,6 +30,10 @@ if(response.data.success){
             <input placeholder="Mens.." value={search} onChange={handleChange} />
             {state?.user?.name && <h1>Hello, {state?.user?.name}</h1>}
             {state?.user?.role ? <h1 onClick={Logout}>Logout</h1> : <h2 onClick={()=> router('login')}>Login</h2>}
+            {/* <h2 onClick={()=> router("/register")}>Register</h2> */}
+            <h2 onClick={()=> router("/home")}>Home</h2>
+            <h2 onClick={()=> router("/cart")}>Cart</h2>
+
         </div>
     );
 };
