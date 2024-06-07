@@ -101,6 +101,7 @@ if (response.data.success){
       <div id="body-nav">
 
       <Link to="/cart">Go to Cart</Link>
+     
       
         <div>
           <p>
@@ -149,8 +150,16 @@ if (response.data.success){
           </div>
         </div>
       </div>
+
+<div className="homeimg1">
+  <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/em_in_cricket_t20_jersey_updated_asset_d_4673cc2b9b.jpg" alt="" />
+  <video src="https://brand.assets.adidas.com/video/upload/f_auto:video,q_auto/if_w_gt_1920,w_1920/originals_ss24_duo_global_launch_hp_masthead_d_207a98312e.mp4"></video>
+</div>
+
+<div className="adistart"><h2> <b> Be Summer Ready With Adidas Products  </b>  </h2></div>
+
       <div id="body-body">
-        <div id="body-body-filters" class="w-100">
+        {/* <div id="body-body-filters" class="w-100">
           <div class="b-black w-100 p-30">
             <p>CATEGORIES</p>
             <div>
@@ -213,7 +222,7 @@ if (response.data.success){
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div id="body-body-products" class="pl-20">
           <h1>All Products</h1>
           {allProducts.length ? (

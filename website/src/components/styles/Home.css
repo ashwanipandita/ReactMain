@@ -12,6 +12,19 @@
     padding: 30px;
 }
 
+.homeimg1 img{
+    width: 100%;
+}
+
+.homeimg1 video{
+    width: 100%;
+}
+
+.adistart{
+    margin-left: 100px;
+}
+
+
 #body-body {
     border: 2px solid red;
     display: flex;

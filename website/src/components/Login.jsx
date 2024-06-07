@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
 import axios from "axios";
 import api from "../AxiosConfig";
+import { Link } from "react-router-dom";
+
 
 function Login() {
   const { LOGIN, state } = useContext(AuthContext);
@@ -58,6 +60,7 @@ function Login() {
   return (
     <div>
       <h1>Login</h1>
+      
       <form onSubmit={handleSubmit}>
         <label>Email : </label>
         <br />
@@ -83,7 +86,12 @@ function Login() {
         <input type="submit" value="Login" />
       </form>
 
-<button onClick={()=> router("/register")}>Register?</button>
+<button onClick={()=> router("/register")}>Register</button> <br />
+
+<Link to="/add-product">
+  <button>Add Product</button>
+</Link>
+
 
     </div>
   );
